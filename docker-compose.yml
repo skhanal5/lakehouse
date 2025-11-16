@@ -7,7 +7,7 @@ services:
     - metastore
     - object-store
     volumes:
-    - ./lakehouse/trino/etc:/etc/trino
+    - ./trino/etc:/etc/trino
   metastore:
     image: apache/hive:4.2.0
     ports:
@@ -15,6 +15,7 @@ services:
     depends_on:
       - metastore-db
     environment:
+      SERVICE_NAME: metastore
       SERVICE_OPTS: "-Djavax.jdo.option.ConnectionDriverName=org.postgresql.Driver -Djavax.jdo.option.ConnectionURL=${METASTORE_URL} -Djavax.jdo.option.ConnectionUserName=${METASTORE_USER} -Djavax.jdo.option.ConnectionPassword=${METASTORE_PASSWORD}"
       DB_DRIVER: postgres
     volumes:
