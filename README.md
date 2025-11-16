@@ -19,6 +19,27 @@ A lightweight **local data warehouse** built on Apache Iceberg, designed for tes
 
 ## Quick Start
 
+1. Set up the environment variables necessary. You can define a `.env` in the project root like so. Make note of the values that are being passed in.
+
+```
+# Metastore database
+POSTGRES_DB=metastore_db
+POSTGRES_USER=hive
+POSTGRES_PASSWORD=password
+
+# Hive metastore
+METASTORE_URL=jdbc:postgresql://metastore-db:5432/metastore_db
+METASTORE_USER=hive
+METASTORE_PASSWORD=password
+METASTORE_DB_DRIVER=postgres
+
+# MinIO Credentials
+MINIO_ROOT_USER=minioadmin
+MINIO_ROOT_PASSWORD=minioadmin
+```
+
+2. Spin up the containers. Refer to the Makefile for more information.
+
 ```bash
 # Start all services
 make up
