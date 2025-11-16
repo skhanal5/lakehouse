@@ -23,4 +23,4 @@ restart:
 	docker-compose -f $(DC) restart
 
 shell-trino:
-	@docker exec -it $(shell docker ps -qf "name=trino") bash
+	@docker exec -it $$(docker ps -qf "name=trino") trino
