@@ -1,0 +1,14 @@
+[project]
+name = "lakehouse"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "apache-airflow==2.8.2",
+]
+
+[dependency-groups]
+lint = [
+    "ruff>=0.14.5",
+]

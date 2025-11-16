@@ -1,6 +1,6 @@
 # Lakehouse (Local Iceberg Setup)
 
-A lightweight **local data warehouse** built on Apache Iceberg, designed for testing and development. This setup uses Docker to run all components locally.
+A lightweight **local data warehouse** built on Apache Iceberg, designed for local development. This setup uses Docker to run all components.
 
 ## Components
 
@@ -10,6 +10,7 @@ A lightweight **local data warehouse** built on Apache Iceberg, designed for tes
 | **Query Engine**      | Trino is the SQL engine for querying Iceberg tables |
 | **Object Storage**    | MinIO will be the S3-compatible storage for Iceberg table data |
 | **Metastore Database**| PostgreSQL is the underlying backend database for the Hive Metastore |
+| **Airflow**| Orchestration tool for ingesting data and producing tables |
 
 ## Features
 
@@ -49,3 +50,12 @@ make down
 
 # Remove containers and volumes for a fresh start
 make clean
+
+3. Interact with the system
+
+| **Service**           | **Web UI URL**                                 |
+| --------------------- | ---------------------------------------------- |
+| **Airflow Webserver** | [http://localhost:8081](http://localhost:8081) |
+| **MinIO Console**     | [http://localhost:9001](http://localhost:9001) |
+| **Trino Cluster UI**      | [http://localhost:8080](http://localhost:8080) |
+
