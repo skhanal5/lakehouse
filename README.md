@@ -50,6 +50,7 @@ make down
 
 # Remove containers and volumes for a fresh start
 make clean
+```
 
 3. Interact with the system
 
