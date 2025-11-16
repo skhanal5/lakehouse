@@ -20,7 +20,8 @@ logs:
 
 restart:
 	@echo "Restarting lakehouse stack..."
-	docker-compose -f $(DC) restart
+	docker-compose -f $(DC) down
+	docker-compose -f $(DC) up -d
 
 shell-trino:
 	@docker exec -it $$(docker ps -qf "name=trino") trino
